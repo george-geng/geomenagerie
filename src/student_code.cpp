@@ -1,5 +1,5 @@
 /*
- * Student solution for UC Berkeley Project 2
+ *
  *
  * Implemented by George Geng.
  *
@@ -12,7 +12,7 @@
 namespace CGL {
 
     void BezierPatch::preprocess() {
-        // TODO Part 1.
+
         //called in bezierPatch.cpp where control points are already loaded, u can just call control points
         //turn control points into 3 x y z matrices
         for (int i = 0; i < 4; i++) {
@@ -288,8 +288,8 @@ namespace CGL {
     }
 
     void MeshResampler::upsample(HalfedgeMesh& mesh)
-    // TODO Part 5.
-    // This routine should increase the number of triangles in the mesh using Loop subdivision.
+
+    // this routine increases the number of triangles in the mesh using Loop subdivision.
     {
         //Set all existing vertices isNew to false and compute new position
          for(VertexIter v = mesh.verticesBegin(); v != mesh.verticesEnd(); v++) {
@@ -365,7 +365,6 @@ namespace CGL {
 
    
 
-    // TODO Part 6.
-    // TODO There's also some code you'll need to complete in "Shader/frag" file.
+   //also complete code "Shader/frag" file.
 
 }
