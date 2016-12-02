@@ -47,10 +47,10 @@ vec3 shadeDiffuseFromEye()
 }
 
 vec3 shadePhong(vec3 lightPos)
-{   // TODO Part 6. 
-    // TODO Compute Phong shading here. You can choose any color you like. But please
-    // TODO make sure that you have noticeable specular highlights in the shading.
-    // TODO Variables to use: eyePos, lightPos, normal, vertex
+{   
+    // Compute Phong shading here, choose any color you like
+    // make sure there are specular highlights
+    // given vars: eyePos, lightPos, normal, vertex
     vec3 n = normalize(normal); 
     float La = 0.4;
     vec3 I = vec3(3.0, 2.0, 5.0);
@@ -82,14 +82,13 @@ float atan2(float y, float x) {
 }
 
 vec3 shadeEnvmapReflection()
-{   // TODO Part 6.
-    // TODO Compute environment mapping based on reflection direction her.
-// TODO First compute the reflection direction using eyePos, normal and vertex.
-    // TODO Then convert the reflection direction to spherical coordinates (theta, phi). 
-    // TODO Note that the up vector is along +Z axis.
-    // TODO Finally, grab the color from envmap using (theta, phi).
-    // TODO You will need to use function "vec4 texture2D(sampler2D tex, vec2 uv)" to 
-    // TODO get colors from textures. 
+{ 
+    // compute environment mapping based on reflection direction here
+    // -compute the reflection direction using eyePos, normal and vertex.
+    // -convert the reflection direction to spherical coordinates (theta, phi). 
+    // (note that the up vector is along +Z axis)
+    // get color from envmapp using (theta, phi).
+    // func "vec4 texture2D(sampler2D tex, vec2 uv)" gets colors from textures. 
     vec3 n = normalize(normal);
     vec3 i = normalize(eyePos - vertex);
     vec3 o = normalize(2.0*(dot(i, n))*n - i);
